@@ -13,7 +13,7 @@
     </button>
 
     {{-- Top navbar --}}
-    <div class="text-gray-700 font-bold hidden lg:inline-block">
+    <div class="text-gray-700 font-bold hidden lg:inline-block shrink-0">
         <ul class="flex">
             <li><a href="/" class="p-4 {{ request()->is('/') ? 'text-indigo-700  border-b-4 rounded-b border-indigo-700' : 'hover:text-indigo-700 transition duration-150' }}">Naslovnica</a></li>
             <li><a href="/kontakt" class="p-4 ml-[-1rem] {{ request()->is('kontakt') ? 'text-indigo-700  border-b-4 rounded-b border-indigo-700' : 'hover:text-indigo-700 transition duration-150' }}">Kontakt</a></li>
@@ -24,8 +24,7 @@
     </div>
 
     {{--Contact info--}}
-    <address class="flex space-y-0 xl:space-y-4 flex-col text-gray-800 text-end">
-        <div class="flex space-x-0 xl:space-x-9 flex-col xl:flex-row">
+    <address class="grid xl:grid-cols-2 text-sky-700">
             <span class="font-semibold hidden sm:inline">
                 <i class="mr-2 text-2xl sm:text-xl fa-regular fa-clock"></i>
                 <span>Pon - Pet 8:00 - 16:00</span>
@@ -35,8 +34,6 @@
                     class="mr-2 text-2xl sm:text-xl fa-regular fa-envelope group-hover:scale-125 transition duration-150"></i>
                 <span class="hidden sm:inline">luka.technoprom@gmail.com</span>
             </a>
-        </div>
-        <div class="flex space-x-0 xl:space-x-9 flex-col xl:flex-row">
             <a href="tel:+385951230003" class="mb-2 sm:mb-0 font-semibold underline group">
                 <i class="mr-2 text-2xl sm:text-xl fa-solid fa-phone group-hover:scale-125 transition duration-150"></i>
                 <span class="hidden sm:inline">+385 95 123 0003</span>
@@ -45,7 +42,6 @@
                 <i class="mr-2 text-2xl sm:text-xl fa-brands fa-facebook group-hover:scale-125 transition duration-150"></i>
                 <span class="hidden sm:inline">Posjetite našu facebook stranicu</span>
             </a>
-        </div>
     </address>
 </nav>
 <hr class="my-2">

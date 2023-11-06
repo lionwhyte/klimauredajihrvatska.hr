@@ -19,7 +19,7 @@
 
     </header>
 
-    <main class="container mx-auto px-4">
+    <main>
         @yield('content')
     </main>
 

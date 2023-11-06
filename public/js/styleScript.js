@@ -58,7 +58,7 @@ backToTopButton.addEventListener('click', function() {
 });
 
 
-//SHOW MORE FUNCTIONfunction toggleDetails(button) {
+//SHOW MORE FUNCTION
 function toggleDetails(button) {
     const content = button.nextElementSibling;
     content.classList.toggle('hidden');
@@ -70,4 +70,23 @@ function toggleDetails(button) {
     const textSpan = button.querySelector('span:last-of-type');
     textSpan.textContent = content.classList.contains('hidden') ? '(prikaži više)' : '(prikaži manje)';
 }
+
+
+//SCROLL OVER ANIMATION
+// document.addEventListener('scroll', function() {
+//     const container = document.getElementById('container');
+//     const animateMe = document.getElementById('animateMe');
+
+//     // Check if the element is in view
+//     const isInView = container.getBoundingClientRect().top <= window.innerHeight && container.getBoundingClientRect().bottom >= 0;
+
+//     // Trigger the animation only if the element is in view and not already animated
+//     if (isInView && !animateMe.classList.contains('animated')) {
+//         animateMe.classList.remove('opacity-0', 'translate-y-10');
+//         animateMe.classList.add('opacity-100', 'translate-y-0', 'transition', 'duration-[2000ms]', 'animated');
+//     }
+// });
+
+
+
     
