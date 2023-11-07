@@ -1,10 +1,9 @@
 @extends('layout')
 
-
 @php
     $breadcrumbs = [
             ['title' => 'NASLOVNICA', 'url' => '/'],
-            ['title' => 'KONTAKT', 'url' => '']
+            ['title' => 'KOMPLETAN CJENIK KLIMA 3,5KW ZA PROSTORE OD 25-40 M2', 'url' => '']
         ];
 @endphp
 

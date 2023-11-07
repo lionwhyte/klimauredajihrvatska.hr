@@ -147,6 +147,40 @@ Route::get('/blog/dizalica-topline', function () {
     return view('dizalica-topline');
 });
 
+// KLIME AKCIJA 
+Route::get('/blog/klime-akcija', function () {
+    return view('klime-akcija');
+});
+
+// RASHLADNI UREĐAJI 
+Route::get('/blog/rashladni-uredaji-sto-su-kako-rade-i-koji-odabrati', function () {
+    return view('rashladni-uredaji-sto-su-kako-rade-i-koji-odabrati');
+});
+
+// ODABIR KLIMA UREĐAJA 
+Route::get('/blog/odabir-klima-uredaja', function () {
+    return view('odabir-klima-uredaja');
+});
+
+// ZATRAŽI CIJENIK 2,5kw
+Route::get('/kompletan-cjenik-klima-25kw-za-prostore-od-7-25-m2', function () {
+    return view('kompletan-cjenik-klima-25kw-za-prostore-od-7-25-m2');
+});
+
+Route::get('/kompletan-cjenik-klima-35kw-za-prostore-od-25-40-m2', function () {
+    return view('kompletan-cjenik-klima-35kw-za-prostore-od-25-40-m2');
+});
+
+// ZATRAŽI CIJENIK 5kw
+Route::get('/kompletan-cjenik-klima-5kw-za-prostore-od-40-60-m2', function () {
+    return view('kompletan-cjenik-klima-5kw-za-prostore-od-40-60-m2');
+});
+
+// ZATRAŽI CIJENIK 7kw
+Route::get('/kompletan-cjenik-klima-7kw-za-prostore-od-60-90-m2', function () {
+    return view('kompletan-cjenik-klima-7kw-za-prostore-od-60-90-m2');
+});
+
 
 
 

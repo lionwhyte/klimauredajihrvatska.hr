@@ -17,24 +17,23 @@
 
 //ON SCROLL FUNCTIONS
 window.onscroll = function() {
-    logoSectionScrollFixed();
+    elementsFixedOnScroll();
     backToTop();
 };
 
 
 //LOGO SECTION STICK ON TOP WHEN SCROLL DOWN
-function logoSectionScrollFixed() {
+function elementsFixedOnScroll() {
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
        document.getElementById("logo-section").classList.remove("container");
        document.getElementById("logo-section").classList.add("fixed");
        document.getElementById("logo-section").classList.add("top-0");
        document.getElementById("logo-section").classList.add("w-screen");
-        
     } else {
        document.getElementById("logo-section").classList.add("container");
        document.getElementById("logo-section").classList.remove("fixed");
        document.getElementById("logo-section").classList.remove("top-0");
-       document.getElementById("logo-section").classList.remove("w-screen");   
+       document.getElementById("logo-section").classList.remove("w-screen");
     }
 }
 
