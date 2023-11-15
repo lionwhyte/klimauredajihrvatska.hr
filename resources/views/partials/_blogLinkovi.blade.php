@@ -1,18 +1,18 @@
 <section class="container px-4 space-y-6 my-20">
     <div class="space-y-1">
         <img src="" alt="">
-        <h2 class="text-2xl text-sky-500 underline"><a href="/prodaja-klima-uredaja">Klima uređaji prodaja</a></h2>
+        <h2 class="text-2xl text-sky-500 underline"><a href="/klima-uredaji">Klima uređaji prodaja</a></h2>
         <p class="font-semibold text-sm">Klima uređaji renomiranih marki po povoljnim cijenama, izdavanje R1 računa,garancija, besplatan uviđaj i procjena montaže.</p>
     </div>
     <div class="space-y-1">
         <img src="" alt="">
-        <h2 class="text-2xl text-sky-500 underline"><a href="/centralno-solarno-podno-grijanje">Centralno grijanje</a></h2>
+        <h2 class="text-2xl text-sky-500 underline"><a href="https://www.technoprom.hr/centralno-solarno-podno-grijanje/">Centralno grijanje</a></h2>
         <p class="font-semibold text-sm">Najpovoljnije centralno - solarno - podno grijanje, prodaja, ugradnja i servis. Nudimo nabavu i montažu svih vrsta i 
             tipova opreme za centralna grijanja. Naše stručno osoblje, pomoći će Vam izabrati najbolju dizalicu topline, koja odgovara Vašim potrebama.</p>
     </div>
     <div class="space-y-1">
         <img src="" alt="">
-        <h2 class="text-2xl text-sky-500 underline"><a href="/termoakumulacijske-peci-prodaja">Termoakumulacijske peći</a></h2>
+        <h2 class="text-2xl text-sky-500 underline"><a href="https://www.technoprom.hr/termoakumulacijske-peci-prodaja/">Termoakumulacijske peći</a></h2>
         <p class="font-semibold text-sm">Prodajemo, montiramo, servisiramo po cijeloj Hrvatskoj, Magnohrom termo peći, od 2455 kn + pdv, ovisno o snazi, 
             za detaljniju i precizniju ponudu molim da nam se direktno obratite putem e-maila, kontakt obrazca ili pozivom na broj 095/123-0003, 
             luka.technoprom@gmail.com.
@@ -50,7 +50,7 @@
     </div>
     <div class="space-y-1">
         <img src="" alt="">
-        <h2 class="text-2xl text-sky-500 underline"><a href="/peci-kotlovi-na-pelete-i-drva">Peći - kotlovi na pelet i drva</a></h2>
+        <h2 class="text-2xl text-sky-500 underline"><a href="https://www.technoprom.hr/peci-kotlovi-na-pelete-i-drva/">Peći - kotlovi na pelet i drva</a></h2>
         <p class="font-semibold text-sm">Peći - kotlovi na pelet i drva je peć koja sagorijeva komprimirano drvo ili pelet na biomasu kako bi stvorila izvor topline za stambene i 
             ponekad industrijske prostore. Stalnim punjenjem goriva iz spremnika (lijevak) u područje ložišta, on stvara stalni plamen koji zahtjeva malo ili 
             nimalo fizičkih prilagodbi. Današnji sustavi centralnog grijanja koji rade na drvene pelete kao obnovljivi izvor energije mogu doseći faktor učinkovitosti 

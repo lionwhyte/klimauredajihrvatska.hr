@@ -57,7 +57,7 @@
                 <img src="{{asset('/images/fotolia-123425441-1400-5b170a2de3b3a-1400xr_5ef9913f5ac11_1400xr-1140x445.jpg')}}">
                 <h2 class="font-semibold text-2xl">Kako odabrati idealan klima uređaj?</h2>
                 <p>Osim osnova klimatizacije, s vama ćemo podijeliti nekoliko korisnih savjeta, kako bi vam se odužili za vaše utrošeno vrijeme.</p>
-                <p class="text-sm font-semibold text-indigo-700 hover:text-indigo-500"><a href="/blog/idalan-klima-uredaj">PROČITAJ VIŠE +</a></p>
+                <p class="text-sm font-semibold text-indigo-700 hover:text-indigo-500"><a href="/blog/idealan-klima-uredaj">PROČITAJ VIŠE +</a></p>
             </article>
             <hr class="my-6">
         </section>
@@ -71,7 +71,7 @@
             <p class="font-semibold text-indigo-700 hover:text-indigo-500"><a href="/blog/odabir-klima-uredaja">Odabir klima uređaja - ultimativni vodič</a></p>
             <p class="font-semibold text-indigo-700 hover:text-indigo-500"><a href="/blog/klima-uredaji-novosti">Klima uređaji novosti</a></p>
             <p class="font-semibold text-indigo-700 hover:text-indigo-500"><a href="/blog/dizalica-topline">Dizalica topline - sve što trebate znati!</a></p>
-            <p class="font-semibold text-indigo-700 hover:text-indigo-500"><a href="/blog/idalan-klima-uredaj">Kako odabrati idealan klima uređaj?</a></p>
+            <p class="font-semibold text-indigo-700 hover:text-indigo-500"><a href="/blog/idealan-klima-uredaj">Kako odabrati idealan klima uređaj?</a></p>
         </aside>
     </div>
 @endsection

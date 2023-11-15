@@ -2,6 +2,7 @@
 
 use App\Models\Listing;
 use Faker\Provider\Lorem;
+use App\Models\KlimaUredaj;
 use Illuminate\Http\Request;
 use App\Models\TutorialListing;
 use Illuminate\Support\Facades\Route;
@@ -9,6 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AkcijeController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\KlimaUredajController;
 use App\Http\Controllers\NajjeftinijeController;
 
 /*
@@ -101,7 +103,7 @@ Route::get('/tutorial/listings/{id}', function ($id) {
 Route::get('/', [HomeController::class, 'index']);
 
 // LANDING PAGE
-Route::get('/klima-uredaji', [ListingController::class, 'index']);
+Route::get('/klima-uredaji', [KlimaUredajController::class, 'index']);
 
 // SINGLE PRODUCT
 Route::get('/listings/{slug}', [ListingController::class, 'show']);
@@ -179,6 +181,16 @@ Route::get('/kompletan-cjenik-klima-5kw-za-prostore-od-40-60-m2', function () {
 // ZATRAŽI CIJENIK 7kw
 Route::get('/kompletan-cjenik-klima-7kw-za-prostore-od-60-90-m2', function () {
     return view('kompletan-cjenik-klima-7kw-za-prostore-od-60-90-m2');
+});
+
+// KLIMA UREĐAJI NOVOSTI
+Route::get('/blog/klima-uredaji-novosti', function () {
+    return view('klima-uredaji-novosti');
+});
+
+// IDEALAN KLIMA UREĐAJ
+Route::get('/blog/idealan-klima-uredaj', function () {
+    return view('idealan-klima-uredaj');
 });
 
 

@@ -43,14 +43,14 @@ class DatabaseSeeder extends Seeder
 
         //User::factory(5)->create();
 
-        $user = User::factory()->create([
-            'name' => 'John Doe',
-            'email' => 'john@gmail.com',
-        ]); //u ovom primjeru kreramo jednog usera koji ce ownati sve listinge
+        // $user = User::factory()->create([
+        //     'name' => 'John Doe',
+        //     'email' => 'john@gmail.com',
+        // ]);
 
-        Listing::factory(15)->create([
-            'user_id' => $user->id //jos dodajemo user_id odnosno foreign key sa user tablice da bi definirali koji listing pripada kojem useru
-        ]);
+        // Listing::factory(15)->create([
+        //     'user_id' => $user->id //jos dodajemo user_id odnosno foreign key sa user tablice da bi definirali koji listing pripada kojem useru
+        // ]);
         
     }
 }

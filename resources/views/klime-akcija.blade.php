@@ -11,7 +11,7 @@
 
 @section('content')
     <section class="container mx-auto space-y-12 mb-20 px-4">
-        <img src="{{asset('/images/klima_uredaji_akcija_5ef1a49e146de.png.webp')}}" alt="klima_uredaji_akcija">
+        <img src="{{asset('/images/klima_uredaji_akcija_5ef1a49e146de.png.webp')}}">
         <article class="space-y-6">
             <h2 class="text-2xl text-sky-600">Vrhunski klima uređaji na akciji</h2>
             <p>Dobrodošli u Klima uređaji Hrvatska, gdje vam donosimo <strong>vrhunske klima uređaje</strong> u prodaji po najnižim cijenama na tržištu. 

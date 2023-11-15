@@ -1,0 +1,10 @@
+#opis-proizvoda dt {
+    margin-top: 32px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+#opis-proizvoda h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
