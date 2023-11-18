@@ -18,4 +18,19 @@ class KlimaUredajController extends Controller
 
         return view('klimaUredaji.index', ['klimaUredaji' => $klimaUredaji]);
     }
+
+    //SINGLE PRODUCT
+    public function show($slug)
+    {
+        $klimaUredaj = KlimaUredaj::where('slug', $slug)->firstOrFail();
+
+        // Get related products based on ucinak_hladenja_kw
+        $relatedProducts = KlimaUredaj::where('ucinak_hladenja_kw', '=', $klimaUredaj->ucinak_hladenja_kw)
+        ->inRandomOrder()
+        ->limit(8) // Adjust the limit as needed
+        ->get();
+
+        return view('klimaUredaji.show', compact('klimaUredaj', 'relatedProducts'));
+    }
+    
 }

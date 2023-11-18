@@ -8,3 +8,10 @@
     font-size: 1.25rem;
     font-weight: 600;
 }
+
+#opis-proizvoda p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+

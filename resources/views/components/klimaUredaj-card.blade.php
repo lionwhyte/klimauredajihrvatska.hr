@@ -6,18 +6,18 @@ $slike = explode(',', $klimaUredaj->slike);
 @endphp
 
 <x-card> {{-- x-card je importana komponenta od card.blade.php a child sadržaj od ispod će biti ubačen u njegov slot--}}
-    <div class="flex items-start">
-        <img class="hidden w-48 mr-6 md:block" 
-            src="{{ asset('images/' . $klimaUredaj->brend . '/' . (isset($slike[2]) && !empty($slike[2]) ? $slike[2] : $slike[0])) }}" alt="{{ $klimaUredaj->naslov }}" />
-    
+    <div class="grid md:grid-cols-2 md:space-x-4">
+        <a href="/klima-uredaji/{{$klimaUredaj->slug}}">
+            <img class="w-fit mr-6" 
+                src="{{ asset('images/' . $klimaUredaj->brend . '/' . (isset($slike[2]) && !empty($slike[2]) ? $slike[2] : $slike[0])) }}" alt="{{ $klimaUredaj->naslov }}" />
+        </a>
+       
         <div>
             <h3 class="text-2xl">
-                <a href="/listings/{{$klimaUredaj->slug}}">{{$klimaUredaj->naslov}}</a> {{-- moze se pisati $listing['title'] ali $listing->title je preferiran način--}}
+                <a href="/klima-uredaji/{{$klimaUredaj->slug}}">{{$klimaUredaj->naslov}}</a> {{-- moze se pisati $listing['title'] ali $listing->title je preferiran način--}}
             </h3>
             {{-- <x-listing-tags :tagsCsv="$listing->tags" /> --}}
-            {{-- <div class="text-lg mt-4" id="opis-proizvoda">
-                <h3 class="text-2xl font-semibold">OPIS</h3> {!!$klimaUredaj->opis!!}
-            </div> --}}
+
             <ul id="specifikacije" class="mt-3">
                 <li>
                     <span>Učinak hlađenja:</span>
@@ -49,12 +49,13 @@ $slike = explode(',', $klimaUredaj->slike);
                     $zatrazi_cjenik_link = "/kompletan-cjenik-klima-25kw-za-prostore-od-7-25-m2";
                 }
             @endphp
-            <a href={{$zatrazi_cjenik_link}} class="inline-block space-x-2 mt-2 bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded" id="dodatni-popust">
+            <a href={{$zatrazi_cjenik_link}} 
+                class="inline-block space-x-2 mt-2 bg-green-500 hover:bg-green-700 text-white text-center font-semibold py-2 px-4 rounded transition duration-150" id="dodatni-popust">
                 <i class="fa-solid fa-money-bill"></i><span>ŽELIM DODATNI POPUST</span>
             </a>
             {{-- <a href="{{ route('cart.add', ['id' => $klimaUredaj->id]) }}" --}}
             <a href="#"
-                class="inline-block space-x-2 mt-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded" id="dodaj-u-kosaricu">
+                class="inline-block space-x-2 mt-2 bg-gray-700 hover:bg-gray-900 text-white text-center font-semibold py-2 px-4 transition duration-150" id="dodaj-u-kosaricu">
                 <i class="fa-solid fa-bag-shopping"></i><span>DODAJ U KOŠARICU</span>
             </a>
             

@@ -1,5 +1,29 @@
- //MOBILE NAV LINKS WHEN OPENING TRANSITION
- document.getElementById('hamburger').addEventListener('click', function() {
+//CAROUSEL
+// Get all elements with the 'thumb' class
+var thumbElements = document.querySelectorAll('.thumb');
+
+// Add click event listener to each element
+thumbElements.forEach(function (element, index) {
+    const carousel = document.getElementById("carousel");
+    element.addEventListener('click', function () {
+        if(!element.classList.contains("border-gray-500")){
+            // Your click event handling logic here
+            carousel.classList.remove(carousel.classList[carousel.classList.length - 1])
+            carousel.classList.add(`translate-x-[-${index * 100}%]`)
+
+            thumbElements.forEach(function (el) {
+                el.classList.remove("border-gray-500")
+                el.classList.add("border-gray-200")
+            });
+            element.classList.remove("border-gray-200")
+            element.classList.add("border-gray-500")
+        }
+    });
+});
+ 
+ 
+//MOBILE NAV LINKS WHEN OPENING TRANSITION
+document.getElementById('hamburger').addEventListener('click', function() {
     const nav = document.getElementById('mobile-nav');
     if (nav.clientHeight === 0) {
         // Open the nav element
@@ -57,7 +81,7 @@ backToTopButton.addEventListener('click', function() {
 });
 
 
-//SHOW MORE FUNCTION
+//SHOW MORE TAB
 function toggleDetails(button) {
     const content = button.nextElementSibling;
     content.classList.toggle('hidden');
@@ -68,6 +92,23 @@ function toggleDetails(button) {
 
     const textSpan = button.querySelector('span:last-of-type');
     textSpan.textContent = content.classList.contains('hidden') ? '(prikaži više)' : '(prikaži manje)';
+}
+
+//INFO TABS BUTTONS IN SINGLE PRODUCT PAGE
+function showTab(tabId) {
+    if (document.getElementById(tabId).style.display !== 'block') {
+        // Hide all tabs
+        document.getElementById('opisContent').style.display = 'none';
+        document.getElementById('informacijeContent').style.display = 'none';
+
+        // Show the selected tab
+        document.getElementById(tabId).style.display = 'block';
+
+        // Emphasize the selected button with border
+        document.getElementById('opisContentButton').classList.remove('border-b-4', 'border-sky-500');
+        document.getElementById('informacijeContentButton').classList.remove('border-b-4', 'border-sky-500');
+        document.getElementById(tabId + 'Button').classList.add('border-b-4', 'border-sky-500');
+    }  
 }
 
 
