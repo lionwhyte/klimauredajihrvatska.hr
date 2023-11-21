@@ -8,7 +8,7 @@ $slike = explode(',', $klimaUredaj->slike);
 <x-card> {{-- x-card je importana komponenta od card.blade.php a child sadržaj od ispod će biti ubačen u njegov slot--}}
     <div class="grid md:grid-cols-2 md:space-x-4">
         <a href="/klima-uredaji/{{$klimaUredaj->slug}}">
-            <img class="w-fit mr-6" 
+            <img class="w-fit" 
                 src="{{ asset('images/' . $klimaUredaj->brend . '/' . (isset($slike[2]) && !empty($slike[2]) ? $slike[2] : $slike[0])) }}" alt="{{ $klimaUredaj->naslov }}" />
         </a>
        

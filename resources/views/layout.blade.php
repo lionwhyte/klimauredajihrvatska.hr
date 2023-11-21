@@ -3,6 +3,15 @@
 
 <head>
     @include('partials._head')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if the page was loaded from the cache (back button was pressed)
+            if (performance.navigation.type === 2) {
+                // Use Livewire.emit to send data to the Livewire component
+                Livewire.emit('updateReceivedData', true);
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -26,7 +35,20 @@
     @include('components.footer')
 
     @include('partials._toTheTopButton')
+    @livewireScripts
 </body>
+{{-- <script>
+    Livewire.init();
+</script> --}}
+{{-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Check if the page was loaded from the cache (back button was pressed)
+        if (performance.navigation.type === 2) {
+            // Use Livewire.emit to send data to the Livewire component
+            Livewire.emit('updateReceivedData');
+        }
+    });
+</script> --}}
 
 <script src="{{ asset('js/styleScript.js') }}"></script>
 
