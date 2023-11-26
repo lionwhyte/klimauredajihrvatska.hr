@@ -12,15 +12,15 @@
     $slike = explode(',', $klimaUredaj->slike);
 @endphp
 
-<div class="container mx-4 mx-auto px-4 mt-4">
+<div class="mx-4 mx-auto px-4 mt-4">
     <x-card>
         <div class="flex flex-col">
-            <div class="grid lg:grid-cols-3 lg:space-x-8">
-                <div class="lg:col-span-1 overflow-hidden ">
+            <div class="grid md:grid-cols-3 md:space-x-8">
+                <div class="md:col-span-1 overflow-hidden">
                     <x-klimaUredajCarousel :klimaUredaj="$klimaUredaj" />
                     
                 </div>
-                <div class="lg:col-span-2">
+                <div class="md:col-span-2">
                     <h3 class="text-3xl">{{$klimaUredaj->naslov}}</h3>
 
                     {{-- <x-listing-tags :tagsCsv="$listing->tags" /> --}}

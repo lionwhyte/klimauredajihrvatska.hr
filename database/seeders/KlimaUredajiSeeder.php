@@ -46,6 +46,8 @@ class KlimaUredajiSeeder extends Seeder
                 'seer' => $item['seer'] ?? null,
                 'raspon_ucinka_grijanja_kw' => $item['raspon_ucinka_grijanja_kw'] ?? null,
                 'scop' => $item['scop'] ?? null,
+                'snaga_kw' => $item['snaga_kw'],
+                'prostor_m2' => $item['prostor_m2'],
                 // ... other columns
             ]);
         }

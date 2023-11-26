@@ -39,7 +39,8 @@ use App\Http\Controllers\NajjeftinijeController;
 Route::get('/', [HomeController::class, 'index']);
 
 // LANDING PAGE
-Route::get('/klima-uredaji', [KlimaUredajController::class, 'index']);
+Route::get('/klima-uredaji', [KlimaUredajController::class, 'index'])->name("shop");
+Route::get('/klima-uredaji/search', [KlimaUredajController::class, 'search'])->name("searchProducts");
 
 // SINGLE PRODUCT
 Route::get('/klima-uredaji/{slug}', [KlimaUredajController::class, 'show']);
@@ -128,7 +129,6 @@ Route::get('/blog/klima-uredaji-novosti', function () {
 Route::get('/blog/idealan-klima-uredaj', function () {
     return view('idealan-klima-uredaj');
 });
-
 
 
 

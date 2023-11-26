@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\KlimaUredaj;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
+
+use function PHPUnit\Framework\isNull;
 
 class KlimaUredajController extends Controller
 {
     //LANDING PAGE
     public function index(Request $request)
-    {
+    {   
         // Default order by 'naslov' (alphabetical order)
         $orderBy = $request->get('order') === 'latest' ? 'created_at' : 'naslov';
 
@@ -31,6 +34,55 @@ class KlimaUredajController extends Controller
         ->get();
 
         return view('klimaUredaji.show', compact('klimaUredaj', 'relatedProducts'));
+    }
+
+
+    //SEARCH PRODUCTS
+    public function search(Request $request)
+    {
+        // Handle other filters
+        $selectedBrand = $request->input('brend');
+        $selectedPower = $request->input('snaga');
+        $selectedMinPrice = $request->input('min-cijena');
+        $selectedMaxPrice = $request->input('max-cijena');
+        $selectedArea = $request->input('prostor');
+        $selectedEnergyLabel = $request->input('energetska-klasa');
+
+        function parsePrice($price)
+        {
+            $price = explode("-", $price);
+            $selectedMinPrice = $price[0];
+            $selectedMaxPrice = $price[1];
+    
+            return compact('selectedMinPrice', 'selectedMaxPrice');
+        }
+    
+        if ($request->filled('cijena')) {
+            extract(parsePrice($request->input('cijena')));
+        }
+
+        $klimaUredaji = KlimaUredaj::when($selectedBrand, function ($query) use ($selectedBrand) {
+            return $query->where('brend', '=', $selectedBrand);
+        })->when($selectedPower, function ($query) use ($selectedPower) {
+            return $query->where('snaga_kw', '=', $selectedPower);
+        })->when($selectedMinPrice, function ($query) use ($selectedMinPrice) {
+            return $query->where('cijena', '>=', $selectedMinPrice);
+        })->when($selectedMaxPrice, function ($query) use ($selectedMaxPrice) {
+            return $query->where('cijena', '<=', $selectedMaxPrice);
+        })->when($selectedArea, function ($query) use ($selectedArea) {
+            return $query->where('prostor_m2', '=', $selectedArea);
+        })->when($selectedEnergyLabel, function ($query) use ($selectedEnergyLabel) {
+            return $query->where('energetski_razred_hladenja', '=', $selectedEnergyLabel);
+        })->paginate(10);
+
+        // Pass the results and selected filters to the view
+        return view('klimaUredaji.index', compact('klimaUredaji', 'selectedBrand', 'selectedPower', 'selectedMinPrice', 'selectedMaxPrice', 'selectedArea', 'selectedEnergyLabel'))
+        ->with('selectedBrand', $selectedBrand)
+        ->with('selectedPower', $selectedPower)
+        ->with('selectedMinPrice', $selectedMinPrice)
+        ->with('selectedMaxPrice', $selectedMaxPrice)
+        ->with('selectedArea', $selectedArea)   
+        ->with('selectedEnergyLabel', $selectedEnergyLabel);
     }
     
 }

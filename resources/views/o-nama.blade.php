@@ -25,9 +25,9 @@ $breadcrumbs = [
         <p>Nudimo 18 proizvođača klima uređaja te montažu i servis na teritoriju čitave Hrvatske uključujući i otoke.</p>
         <p>Sve detaljnije informacije  možete  također pronaći na naše 3 web stranice:</p>
         <ul class="list-disc ml-6">
-            <li><a class="text-indigo-700 hover:text-indigo-500" href="">www.vedran-company.hr</a></li>
-            <li><a class="text-indigo-700 hover:text-indigo-500" href="">www.technoprom.hr</a></li>
-            <li><a class="text-indigo-700 hover:text-indigo-500" href="">www.klimauredajihrvatska.hr</a></li>
+            <li><a class="text-indigo-700 hover:text-indigo-500" href="https://www.vedran-company.hr/">www.vedran-company.hr</a></li>
+            <li><a class="text-indigo-700 hover:text-indigo-500" href="https://www.technoprom.hr/">www.technoprom.hr</a></li>
+            <li><a class="text-indigo-700 hover:text-indigo-500" href="https://klimauredajihrvatska.hr/">www.klimauredajihrvatska.hr</a></li>
         </ul>
     </div>
     <div>

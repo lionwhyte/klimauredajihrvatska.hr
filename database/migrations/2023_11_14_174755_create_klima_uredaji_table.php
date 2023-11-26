@@ -41,6 +41,8 @@ return new class extends Migration
             $table->string('seer', 50)->nullable();
             $table->string('raspon_ucinka_grijanja_kw', 50)->nullable();
             $table->string('scop', 50)->nullable();
+            $table->decimal('snaga_kw', 10, 1);
+            $table->integer('prostor_m2');
             $table->timestamps();
         });
     }

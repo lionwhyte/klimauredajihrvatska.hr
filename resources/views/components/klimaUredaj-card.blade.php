@@ -1,4 +1,4 @@
-@props(['klimaUredaj']) {{--listing propsi dohvaceni sa listings viewa--}}
+@props(['klimaUredaj'])
 
 @php
 $slike = explode(',', $klimaUredaj->slike);
@@ -6,13 +6,13 @@ $slike = explode(',', $klimaUredaj->slike);
 @endphp
 
 <x-card> {{-- x-card je importana komponenta od card.blade.php a child sadržaj od ispod će biti ubačen u njegov slot--}}
-    <div class="grid md:grid-cols-2 md:space-x-4">
+    <div class="grid md:grid-cols-3 md:space-x-6">
         <a href="/klima-uredaji/{{$klimaUredaj->slug}}">
-            <img class="w-fit" 
+            <img class="w-96 md:col-span-1" 
                 src="{{ asset('images/' . $klimaUredaj->brend . '/' . (isset($slike[2]) && !empty($slike[2]) ? $slike[2] : $slike[0])) }}" alt="{{ $klimaUredaj->naslov }}" />
         </a>
        
-        <div>
+        <div class="md:col-span-2">
             <h3 class="text-2xl">
                 <a href="/klima-uredaji/{{$klimaUredaj->slug}}">{{$klimaUredaj->naslov}}</a> {{-- moze se pisati $listing['title'] ali $listing->title je preferiran način--}}
             </h3>
@@ -54,6 +54,7 @@ $slike = explode(',', $klimaUredaj->slike);
                 <i class="fa-solid fa-money-bill"></i><span>ŽELIM DODATNI POPUST</span>
             </a>
             {{-- <a href="{{ route('cart.add', ['id' => $klimaUredaj->id]) }}" --}}
+            <br>
             <a href="#"
                 class="inline-block space-x-2 mt-2 bg-gray-700 hover:bg-gray-900 text-white text-center font-semibold py-2 px-4 transition duration-150" id="dodaj-u-kosaricu">
                 <i class="fa-solid fa-bag-shopping"></i><span>DODAJ U KOŠARICU</span>
