@@ -9,4 +9,14 @@ class KlimaUredaj extends Model
 {
     use HasFactory;
     protected $table = 'klima_uredaji';
+
+    public function onSale()
+    {
+        return $this->hasOne(OnSale::class);
+    }
+
+    public function bestBuy()
+    {
+        return $this->hasOne(BestBuy::class);
+    }
 }

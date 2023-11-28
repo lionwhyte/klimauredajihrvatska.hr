@@ -130,6 +130,16 @@ Route::get('/blog/idealan-klima-uredaj', function () {
     return view('idealan-klima-uredaj');
 });
 
+// UVJETI PRODAJE
+Route::get('/uvjeti-prodaje', function () {
+    return view('uvjeti-prodaje');
+});
+
+// UVJETI PRODAJE
+Route::get('/pravila-o-privatnosti', function () {
+    return view('pravila-o-privatnosti');
+});
+
 
 
 

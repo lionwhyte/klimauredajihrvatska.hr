@@ -38,12 +38,9 @@
     $energyLabels = array("A" , "A++", "A+++");
 @endphp
 
-
-
-
 <div class="lg:flex mb-4 px-4 container mx-auto ">
     {{-- FILTER PROIZVODA --}}
-    <div id="filter-proizvoda" 
+    <div id="product-filter" 
         class="w-64 h-full lg:h-fit shrink-0 p-4 fixed top-0 left-0 lg:static translate-x-[-140%] lg:translate-x-[0] bg-sky-200 lg:bg-white z-50 lg:z-0 rounded transition duration-150 lg:duration-0 overflow-y-auto">
             <div class="flex justify-between mb-4">
                 <a href="{{ route('shop') }}" class="block bg-orange-500 p-2 text-white rounded">PONIŠTI ODABRANO</a>
@@ -61,10 +58,12 @@
                 <i class="fa-solid fa-filter mr-2"></i><span>Filter proizvoda</span>
             </button>
             <label class="self-center text-red-500 hover:text-red-600 font-semibold cursor-pointer">
-                <input type="checkbox" wire:model="onSale"> Na Akciji
+                <input type="checkbox" id="onSaleCheckbox" name="onSaleCheckbox" onchange="filterDiscounted()" 
+                {{isset($selectedOnSale) ? $selectedOnSale === '1' ? 'checked' : '' : ''}}> Na Akciji
             </label>
             <label class="self-center text-gray-500 hover:text-gray-600 font-semibold cursor-pointer">
-                <input type="checkbox" wire:model="onSale"> Najeftinije iz ponude
+                <input type="checkbox" id="bestBuyCheckbox" name="bestBuyCheckbox" onchange="filterBestBuys()" 
+                {{isset($selectedBestBuy) ? $selectedBestBuy === '1' ? 'checked' : '' : ''}}> Najeftinije iz ponude
             </label>
         </div>
         
@@ -73,6 +72,7 @@
         @else
             <div class="grid lg:grid-cols-1 xl:grid-cols-2 gap-2">
                 @foreach($klimaUredaji as $klimaUredaj)
+                    {{-- <x-klimaUredaj-card :klimaUredaj="$klimaUredaj" /> --}}
                     <x-klimaUredaj-card :klimaUredaj="$klimaUredaj" />
                 @endforeach
             </div>
@@ -82,14 +82,23 @@
 
  {{-- PAGINACIJA --}}
  <div class="mt-6 p-4 container mx-auto">
-    @if (isset($selectedBrand) || isset($selectedMinPrice) || isset($selectedMaxPrice) || isset($selectedPower) || isset($selectedArea) || isset($selectedEnergyLabel))
+    @if (isset($selectedBrand) || 
+        isset($selectedMinPrice) || 
+        isset($selectedMaxPrice) || 
+        isset($selectedPower) ||
+        isset($selectedArea) ||
+        isset($selectedEnergyLabel) || 
+        isset($selectedOnSale) ||
+        isset($selectedBestBuy))
         {{ $klimaUredaji->appends([
             'brend' => $selectedBrand, 
             'min-cijena' => $selectedMinPrice,
             'max-cijena' => $selectedMaxPrice,
             'snaga' => $selectedPower,
             'prostor' => $selectedArea,
-            'energetska-klasa' => $selectedEnergyLabel
+            'energetska-klasa' => $selectedEnergyLabel,
+            'onSale' => $selectedOnSale,
+            'bestBuy' => $selectedBestBuy
             ])->links() }}
     @else
         {{ $klimaUredaji->links() }}

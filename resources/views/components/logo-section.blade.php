@@ -2,6 +2,8 @@
 <section id="logo-section" class="z-30 container bg-white mx-auto px-6 flex justify-between items-center mb-4">
     <a href="/"><img class="w-24 md:w-32" src="{{asset('images/logo.gif')}}" alt="" class="logo" /></a>
 
+    {{-- @include('partials._search')  --}}
+
     {{-- Shoping cart --}}
     <form action="" class="border-l-2 pl-2 relative group">
         <button type="submit" class="flex space-x-5 items-center relative">

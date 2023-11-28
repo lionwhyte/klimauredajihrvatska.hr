@@ -8,7 +8,7 @@
     
 </head>
 
-<body class="relative">
+<body class="relative lg:overflow-auto">
     <div class="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-40 hidden lg:hidden" id="dark-element"></div>
     <div class="overflow-hidden mx-auto">
         <header class="py-4">
@@ -36,7 +36,9 @@
     
 </body>
 
+<script src="{{ asset('js/productFilterScript.js') }}"></script>
 <script src="{{ asset('js/styleScript.js') }}"></script>
+<script src="{{ asset('js/tillEndOfSaleCountdown.js') }}"></script>
 
 
 

@@ -31,18 +31,18 @@
         <div class="my-4">
             <h3 class="text-sky-500 text-lg font-bold">Služba za korisnike</h3>
             <ul class="mt-4 space-y-1">
-                <li><a href="#" class="translate duration-150 hover:text-white">Kontakt</a></li>
-                <li><a href="#" class="translate duration-150 hover:text-white">O nama</a></li>
-                <li><a href="#" class="translate duration-150 hover:text-white">Česta pitanja</a></li>
-                <li><a href="#" class="translate duration-150 hover:text-white">Uvjeti prodaje</a></li>
-                <li><a href="#" class="translate duration-150 hover:text-white">Pravila o privatnosti</a></li>
-                <li><a href="#" class="translate duration-150 hover:text-white">Montaža klima uređaja</a></li>
-                <li><a href="#" class="translate duration-150 hover:text-white">Servis klima uređaja</a></li>
-                <li><a href="#" class="translate duration-150 hover:text-white">Dizalice topline</a></li>
-                <li><a href="#" class="translate duration-150 hover:text-white">Centralno, solarno i podno grijanje</a>
+                <li><a href="kontakt" class="translate duration-150 hover:text-white">Kontakt</a></li>
+                <li><a href="o-nama" class="translate duration-150 hover:text-white">O nama</a></li>
+                <li><a href="cesta-pitanja" class="translate duration-150 hover:text-white">Česta pitanja</a></li>
+                <li><a href="uvjeti-prodaje" class="translate duration-150 hover:text-white">Uvjeti prodaje</a></li>
+                <li><a href="pravila-o-privatnosti" class="translate duration-150 hover:text-white">Pravila o privatnosti</a></li>
+                <li><a href="montaza-klima-uredaja" class="translate duration-150 hover:text-white">Montaža klima uređaja</a></li>
+                <li><a href="servis-klima-uredaja" class="translate duration-150 hover:text-white">Servis klima uređaja</a></li>
+                <li><a href="blog/dizalica-topline" class="translate duration-150 hover:text-white">Dizalice topline</a></li>
+                <li><a href="https://www.technoprom.hr/centralno-solarno-podno-grijanje/" class="translate duration-150 hover:text-white">Centralno, solarno i podno grijanje</a>
                 </li>
-                <li><a href="#" class="translate duration-150 hover:text-white">Termoakumulacijske peći</a></li>
-                <li><a href="#" class="translate duration-150 hover:text-white">Peći - kotlovi na pelete i drva</a></li>
+                <li><a href="https://www.technoprom.hr/termoakumulacijske-peci-prodaja/" class="translate duration-150 hover:text-white">Termoakumulacijske peći</a></li>
+                <li><a href="https://www.technoprom.hr/peci-kotlovi-na-pelete-i-drva/" class="translate duration-150 hover:text-white">Peći - kotlovi na pelete i drva</a></li>
             </ul>
         </div>
         <div class="my-4 text-sm">

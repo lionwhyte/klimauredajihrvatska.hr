@@ -1,6 +1,5 @@
 @extends('layout')
 @section('content')
-{{-- @include('partials._search')  --}}
 
 @php
     $breadcrumbs = [
@@ -16,9 +15,8 @@
     <x-card>
         <div class="flex flex-col">
             <div class="grid md:grid-cols-3 md:space-x-8">
-                <div class="md:col-span-1 overflow-hidden">
-                    <x-klimaUredajCarousel :klimaUredaj="$klimaUredaj" />
-                    
+                <div class="md:col-span-1 overflow-hidden relative">
+                    <x-klimaUredajCarousel :klimaUredaj="$klimaUredaj" /> 
                 </div>
                 <div class="md:col-span-2">
                     <h3 class="text-3xl">{{$klimaUredaj->naslov}}</h3>
@@ -32,7 +30,28 @@
                         <span class="font-bold">Kategorija: </span>
                         <span><a href="/klima-uredaji" class="hover:text-slate-700">Klima uređaji</a></span>
                     </div>
-                    <div class="text-2xl font-bold mt-4"><span>{{$klimaUredaj->cijena}}</span><span>€</span></div>
+
+                    {{-- CIJENA --}}
+                    @if($klimaUredaj->onSale && $klimaUredaj->BestBuy)
+                        <p class="mt-4 font-bold text-indigo-700">NAJEFTINIJE U PONUDI</p>
+                        <p class="text-2xl font-bold mt-4 line-through"><span>{{$klimaUredaj->cijena}}</span><span>€</span></p>
+                        {{-- Display the discount information --}}
+                        <p class="text-2xl font-bold text-red-700">
+                            <span>{{round($klimaUredaj->cijena - ($klimaUredaj->cijena * ($klimaUredaj->onSale->discount / 100)), 2)}}</span><span>€</span>
+                        </p>
+                    @elseif($klimaUredaj->onSale)
+                        <p class="text-2xl font-bold mt-4 line-through"><span>{{$klimaUredaj->cijena}}</span><span>€</span></p>
+                        {{-- Display the discount information --}}
+                        <p class="text-2xl font-bold text-red-700">
+                            <span>{{round($klimaUredaj->cijena - ($klimaUredaj->cijena * ($klimaUredaj->onSale->discount / 100)), 2)}}</span><span>€</span>
+                        </p>
+                    @elseif($klimaUredaj->BestBuy)
+                        <p class="mt-4 font-bold text-indigo-700">NAJEFTINIJE U PONUDI</p>
+                        <div class="text-2xl font-bold mt-4"><span>{{$klimaUredaj->cijena}}</span><span>€</span></div>
+                    @else
+                        <div class="text-2xl font-bold mt-4"><span>{{$klimaUredaj->cijena}}</span><span>€</span></div>
+                    @endif
+
                     @php
                         if ($klimaUredaj->ucinak_hladenja_kw >= 7) {
                             $zatrazi_cjenik_link = "/kompletan-cjenik-klima-7kw-za-prostore-od-60-90-m2";

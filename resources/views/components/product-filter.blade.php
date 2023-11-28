@@ -1,4 +1,9 @@
-<form action="{{ route('searchProducts') }}" method="GET" class="space-y-4">
+<form action="{{ route('searchProducts') }}" method="GET" class="space-y-4" id="product-filter-form">
+    {{-- NA AKCIJI --}}
+    <input type="hidden" name="onSale" id="onSaleInput" value="{{ request('onSale', '') }}">
+    <input type="hidden" name="bestBuy" id="bestBuyInput" value="{{ request('bestBuy', '') }}">
+
+
     {{-- BRENDOVI --}}
     <div class="p-4 border-2 rounded">
         <h4 class="text-xl font-semibold mb-4">PROIZVOĐAČ</h4>
