@@ -5,7 +5,7 @@ $slike = explode(',', $klimaUredaj->slike);
 
 // Assuming $time_till_sale is in the format 'Y-m-d H:i:s'
 if (isset($klimaUredaj->onSale->time_till_sale)) {
-    date_default_timezone_set('Europe/Zagreb');
+    // date_default_timezone_set('Europe/Zagreb'); //Time zona je setupirana u config/app.php
     $targetDateTime = \Carbon\Carbon::parse($klimaUredaj->onSale->time_till_sale);
 
     // Calculate the time difference
