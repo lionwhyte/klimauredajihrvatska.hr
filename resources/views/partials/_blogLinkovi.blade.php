@@ -1,4 +1,4 @@
-<section class="container px-4 space-y-6 my-20">
+<section class="container px-4 space-y-6 my-4">
     <div class="space-y-1">
         <img src="" alt="">
         <h2 class="text-2xl text-sky-500 underline"><a href="/klima-uredaji">Klima uređaji prodaja</a></h2>

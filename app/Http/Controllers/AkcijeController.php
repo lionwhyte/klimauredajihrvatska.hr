@@ -8,6 +8,6 @@ class AkcijeController extends Controller
 {
     public function index()
     {
-        return view('akcije');
+        return view('klime-akcija');
     }
 }
