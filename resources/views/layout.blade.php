@@ -39,6 +39,7 @@
 <script src="{{ asset('js/productFilterScript.js') }}"></script>
 <script src="{{ asset('js/styleScript.js') }}"></script>
 <script src="{{ asset('js/tillEndOfSaleCountdown.js') }}"></script>
+<script src="{{ asset('js/livewireScript.js') }}"></script>
 
 
 

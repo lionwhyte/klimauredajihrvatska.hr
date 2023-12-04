@@ -89,11 +89,8 @@ if (isset($klimaUredaj->onSale->time_till_sale)) {
                 <i class="fa-solid fa-money-bill"></i><span>ŽELIM DODATNI POPUST</span>
             </a>
             {{-- <a href="{{ route('cart.add', ['id' => $klimaUredaj->id]) }}" --}}
-            <br>
-            <a href="#"
-                class="inline-block space-x-2 mt-2 bg-gray-700 hover:bg-gray-900 text-white text-center font-semibold py-2 px-4 transition duration-150" id="dodaj-u-kosaricu">
-                <i class="fa-solid fa-bag-shopping"></i><span>DODAJ U KOŠARICU</span>
-            </a>
+            
+            <livewire:add-to-cart :productId="$klimaUredaj->id" />
         </div>
     </div>
 </x-card>

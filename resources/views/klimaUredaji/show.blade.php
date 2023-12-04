@@ -68,16 +68,10 @@
                         <i class="fa-solid fa-money-bill"></i><span>ŽELIM DODATNI POPUST</span>
                     </a>
                     <br>
-                    {{-- <a href="{{ route('cart.add', ['id' => $klimaUredaj->id]) }}" --}}
+                   
                     <hr class="my-4">
-                    <div class="flex items-center mt-2">
-                        <span class="mr-2 font-semibold">Količina:</span>
-                        <input type="number" min="1" max="10" value="1" class="border border-gray-300 p-2 w-16">
-                    </div>
-                    <a href="#"
-                        class="inline-block space-x-2 mt-2 bg-gray-700 hover:bg-gray-900 text-white font-semibold py-2 px-4 transition duration-150" id="dodaj-u-kosaricu">
-                        <i class="fa-solid fa-bag-shopping"></i><span>DODAJ U KOŠARICU</span>
-                    </a>
+                    
+                    <livewire:add-to-cart :productId="$klimaUredaj->id" />
                     <hr class="my-4">
                     <div>
                         <a href="https://www.facebook.com/people/Vedran-Company-Technoprom/100048825046617/"><i class="fa-brands fa-facebook text-blue-500 hover:text-blue-600 text-3xl"></i></a>

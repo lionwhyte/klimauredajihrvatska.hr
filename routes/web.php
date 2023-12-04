@@ -1,15 +1,15 @@
 <?php
 
-use App\Models\Listing;
-use Faker\Provider\Lorem;
 use App\Models\KlimaUredaj;
 use Illuminate\Http\Request;
-use App\Models\TutorialListing;
+use App\Http\Livewire\AddToCart;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AkcijeController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\KlimaUredajController;
 use App\Http\Controllers\NajjeftinijeController;
 
@@ -43,7 +43,12 @@ Route::get('/klima-uredaji', [KlimaUredajController::class, 'index'])->name("sho
 Route::get('/klima-uredaji/search', [KlimaUredajController::class, 'search'])->name("searchProducts");
 
 // SINGLE PRODUCT
-Route::get('/klima-uredaji/{slug}', [KlimaUredajController::class, 'show']);
+Route::get('/klima-uredaji/{slug}', [KlimaUredajController::class, 'show'])->name("singleProduct");
+
+// CART/CHECKOUT
+Route::get('/kosarica', [CartController::class, 'index']);
+Route::get('/checkout', [CheckoutController::class, 'index']);
+
 
 // CONTACT PAGE
 Route::get('/kontakt', function () {
