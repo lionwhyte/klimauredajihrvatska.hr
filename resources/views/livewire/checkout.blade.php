@@ -1,5 +1,5 @@
+{{-- PODACI O PROIZVODIMA --}}
 @if($cartCount > 0)
-    <!-- Add a dropdown with cart items -->
     <div class="font-semibold text-gray-600 p-4 rounded">
         @foreach($cartItems as $cartItem)
             @php
@@ -28,4 +28,6 @@
 @else
     <script>window.location.href = "/kosarica";</script>
 @endif
+
+        
 

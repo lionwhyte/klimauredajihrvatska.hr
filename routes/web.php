@@ -1,17 +1,14 @@
 <?php
 
-use App\Models\KlimaUredaj;
-use Illuminate\Http\Request;
-use App\Http\Livewire\AddToCart;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AkcijeController;
-use App\Http\Controllers\ListingController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\KlimaUredajController;
 use App\Http\Controllers\NajjeftinijeController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +45,12 @@ Route::get('/klima-uredaji/{slug}', [KlimaUredajController::class, 'show'])->nam
 // CART/CHECKOUT
 Route::get('/kosarica', [CartController::class, 'index']);
 Route::get('/checkout', [CheckoutController::class, 'index']);
+// Route::post('/create-order', [OrderController::class, 'createOrder'])->name('order.create');
+// Route::get('/order-received/{order_id}', [OrderController::class, 'orderReceived'])->name('order.received');
+
+Route::post('/checkout', [CheckoutController::class, 'createOrder'])->name('order.create');
+Route::get('/checkout/order-received/{order_id}', [CheckoutController::class, 'orderReceived'])->name('order.received');
+
 
 
 // CONTACT PAGE

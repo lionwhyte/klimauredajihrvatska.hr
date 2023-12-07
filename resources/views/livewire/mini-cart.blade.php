@@ -14,7 +14,6 @@
             </span>
         </span>
         @if($cartCount > 0)
-            <!-- Add a dropdown with cart items -->
             <div class="absolute top-6 right-3 w-80 z-10 bg-sky-200 font-semibold text-gray-600 border-2 border-indigo-300 p-4 rounded-lg shadow-xl hidden group-hover:block">
                 @foreach($cartItems as $cartItem)
                     @php
@@ -23,7 +22,6 @@
                     <div class="flex justify-between gap-4 mb-4">
                         <img src="{{ asset('images/' . $cartItem->product->brend . '/' . $images[2]) }}" alt="{{$cartItem->product->naslov}}" class="h-8 self-center rounded shadow-lg">
                         <span class="self-center">x{{ $cartItem->quantity }}</span>
-                        {{-- <span class="w-12">{{ $images[2] }}</span> --}}
                         <span class="text-sm">{{ $cartItem->product->naslov }}</span>
                         @if ($cartItem->product->onSale)
                             <span class="self-center font-bold text-sm">
