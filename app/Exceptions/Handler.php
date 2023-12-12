@@ -4,9 +4,37 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler extends ExceptionHandler
 {
+
+    // public function render($request, Throwable $e) //Dodana render metoda za handlanje gresaka
+    // {
+    //     if ($e instanceof ModelNotFoundException) {
+    //         return response()->view('errors.404', [], 404);
+    //     }
+
+    //     if ($e instanceof ValidationException) {
+    //         return $this->convertValidationExceptionToResponse($e, $request);
+    //     }
+
+    //     if ($e instanceof AuthenticationException) {
+    //         return $this->unauthenticated($request, $e);
+    //     }
+
+    //     if ($e instanceof HttpException) {
+    //         return $this->renderHttpException($e);
+    //     }
+
+    //     // Customize based on your needs
+    //     // return parent::render($request, $e);
+    //     return response()->view('errors.500', [], 500);
+    // }
+
     /**
      * A list of exception types with their corresponding custom log levels.
      *

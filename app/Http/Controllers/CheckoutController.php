@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Support\Facades\Validator;
 use App\Models\Order;
 use App\Models\OrderItem;
-use App\Models\OnSale;
 use Illuminate\Http\Request;
 use App\Models\Cart as CartModel;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BuyerOrderConfirmation;
+use App\Mail\SellerOrderConfirmation;
+
 
 class CheckoutController extends Controller
 {
@@ -105,21 +109,17 @@ class CheckoutController extends Controller
         // Get the last inserted order's id
         $lastOrderId = $order->order_id;
 
-
-        // dd($lastOrderId);
-
         // Add order items
         foreach ($cartItems as $cartItem) {
             $unitPrice = 0;
            
             // Check if the product is on sale
             if ($cartItem->product->onSale) {
-                // dd("hello");
                 // If on sale, calculate the unit price with discount
-                $unitPrice = number_format(($cartItem->product->cijena - ($cartItem->product->cijena * ($cartItem->product->onSale->discount / 100))), 2);
+                $unitPrice = $cartItem->product->cijena - ($cartItem->product->cijena * ($cartItem->product->onSale->discount / 100));
             } else {
                 // If not on sale, use the regular price
-                $unitPrice = number_format($cartItem->product->cijena, 2);
+                $unitPrice = $cartItem->product->cijena;
             }
 
             $subtotal = $unitPrice * $cartItem->quantity;
@@ -128,8 +128,8 @@ class CheckoutController extends Controller
                 'order_id' => $lastOrderId,
                 'product_id' => $cartItem['product_id'],
                 'quantity' => $cartItem['quantity'],
-                'unit_price' => $unitPrice,
-                'subtotal' => $subtotal,
+                'unit_price' => (float)sprintf("%.2f", $unitPrice),
+                'subtotal' => (float)sprintf("%.2f", $subtotal),
             ]);
             $order->items()->save($orderItem);
         }
@@ -145,6 +145,10 @@ class CheckoutController extends Controller
     {
 
         $order = Order::where('order_id', $order_id)->with('items.product')->firstOrFail();
+
+        // Send email to buyer and seller
+        Mail::to($order->buyer_email)->send(new BuyerOrderConfirmation($order));
+        Mail::to("toni.technoprom@gmail.com")->send(new SellerOrderConfirmation($order));
 
         return view('cart.order-received', compact('order'));
     }

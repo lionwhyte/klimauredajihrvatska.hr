@@ -6,9 +6,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AkcijeController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\EmailTestController;
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\KlimaUredajController;
 use App\Http\Controllers\NajjeftinijeController;
-use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,10 +54,13 @@ Route::get('/checkout/order-received/{order_id}', [CheckoutController::class, 'o
 
 
 
-// CONTACT PAGE
+// KONTAKT STRANICA
 Route::get('/kontakt', function () {
     return view('kontakt');
 });
+
+// KONTAKT RUTA
+Route::post('/kontakt', [ContactFormController::class, 'submitForm'])->name('contact.submit');
 
 // O NAMA
 Route::get('/o-nama', function () {
@@ -147,6 +151,9 @@ Route::get('/uvjeti-prodaje', function () {
 Route::get('/pravila-o-privatnosti', function () {
     return view('pravila-o-privatnosti');
 });
+
+// Route::get('/test-email', [EmailTestController::class, 'sendTestEmail']);
+
 
 
 

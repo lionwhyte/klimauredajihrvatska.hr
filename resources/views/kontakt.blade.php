@@ -9,6 +9,7 @@
 @endphp
 
 @section('content')
+
 @include('components.kontakt')
     
 @endsection
