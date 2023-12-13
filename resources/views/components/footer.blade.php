@@ -36,6 +36,7 @@
                 <li><a href="cesta-pitanja" class="translate duration-150 hover:text-white">Česta pitanja</a></li>
                 <li><a href="uvjeti-prodaje" class="translate duration-150 hover:text-white">Uvjeti prodaje</a></li>
                 <li><a href="pravila-o-privatnosti" class="translate duration-150 hover:text-white">Pravila o privatnosti</a></li>
+                <li><a href="cookie-policy" class="translate duration-150 hover:text-white">Politika kolačića</a></li>
                 <li><a href="montaza-klima-uredaja" class="translate duration-150 hover:text-white">Montaža klima uređaja</a></li>
                 <li><a href="servis-klima-uredaja" class="translate duration-150 hover:text-white">Servis klima uređaja</a></li>
                 <li><a href="blog/dizalica-topline" class="translate duration-150 hover:text-white">Dizalice topline</a></li>
