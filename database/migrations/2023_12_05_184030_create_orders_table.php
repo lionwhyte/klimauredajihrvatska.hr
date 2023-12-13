@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('buyer_email');
             $table->text('buyer_remarks')->nullable();
             $table->decimal('total_amount', 10, 2);
+            $table->boolean('email_sent')->default(false);
             $table->timestamps();
         });
     }

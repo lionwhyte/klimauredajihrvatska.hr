@@ -136,6 +136,10 @@ class CheckoutController extends Controller
 
         $request->session()->regenerate();
 
+        // Send email to buyer and seller
+        Mail::to($order->buyer_email)->send(new BuyerOrderConfirmation($order));
+        Mail::to("toni.technoprom@gmail.com")->send(new SellerOrderConfirmation($order));
+
         // Redirect to the order received page with order details
         return redirect()->route('order.received', ['order_id' => $order->order_id]);
     }
@@ -147,9 +151,13 @@ class CheckoutController extends Controller
         $order = Order::where('order_id', $order_id)->with('items.product')->firstOrFail();
 
         // Send email to buyer and seller
-        Mail::to($order->buyer_email)->send(new BuyerOrderConfirmation($order));
-        Mail::to("toni.technoprom@gmail.com")->send(new SellerOrderConfirmation($order));
+        if (!$order->email_sent) {
+            Mail::to($order->buyer_email)->send(new BuyerOrderConfirmation($order));
+            Mail::to("toni.technoprom@gmail.com")->send(new SellerOrderConfirmation($order));
 
+            // Update the email_sent flag
+            $order->update(['email_sent' => true]);
+        }
         return view('cart.order-received', compact('order'));
     }
 
