@@ -9,6 +9,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\EmailTestController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\KlimaUredajController;
+use App\Http\Controllers\CookiePolicyController;
 use App\Http\Controllers\NajjeftinijeController;
 
 /*
@@ -33,8 +34,16 @@ use App\Http\Controllers\NajjeftinijeController;
 // destroy - Delete listing
 
 
+Route::group(['middleware' => 'checkCookieConsent'], function () {
+    // Your routes that require cookie consent
+    // Route::get('/', [HomeController::class, 'index']);
+});
+
 // NASLOVNICA
 Route::get('/', [HomeController::class, 'index']);
+
+// COOKIE POLICY 
+Route::get('/cookie-policy', [CookiePolicyController::class, 'index'])->name('cookie.policy');
 
 // LANDING PAGE
 Route::get('/klima-uredaji', [KlimaUredajController::class, 'index'])->name("shop");
@@ -43,16 +52,11 @@ Route::get('/klima-uredaji/search', [KlimaUredajController::class, 'search'])->n
 // SINGLE PRODUCT
 Route::get('/klima-uredaji/{slug}', [KlimaUredajController::class, 'show'])->name("singleProduct");
 
-// CART/CHECKOUT
+// CART/CHECKOUT/ORDER
 Route::get('/kosarica', [CartController::class, 'index']);
 Route::get('/checkout', [CheckoutController::class, 'index']);
-// Route::post('/create-order', [OrderController::class, 'createOrder'])->name('order.create');
-// Route::get('/order-received/{order_id}', [OrderController::class, 'orderReceived'])->name('order.received');
-
 Route::post('/checkout', [CheckoutController::class, 'createOrder'])->name('order.create');
 Route::get('/checkout/order-received/{order_id}', [CheckoutController::class, 'orderReceived'])->name('order.received');
-
-
 
 // KONTAKT STRANICA
 Route::get('/kontakt', function () {
