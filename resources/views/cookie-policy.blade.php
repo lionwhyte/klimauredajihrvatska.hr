@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <div class="container mt-4 space-y-4 mx-auto mb-96">
+    <div class="container mt-4 space-y-4 mx-auto mb-96 px-4">
         <h1 class="text-2xl text-indigo-700 font-semibold">Politika kolačića</h1>
 
         <p>Dobrodošli u Klima Uređaji Hrvatska! Ova politika kolačića osmišljena je kako bi vas informirala o korištenju kolačića na našoj web stranici.</p>

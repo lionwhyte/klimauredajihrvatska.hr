@@ -14,8 +14,8 @@
 <section class="container px-4 py-8 mx-auto bg-gray-200 rounded-t">
     <livewire:on-sale-products />
 </section>
-<section class="container px-4 mx-auto bg-slate-700 text-white font-semibold py-12 text-center">
-    <div class="space-y-2">
+<section class="container px-4 mx-auto bg-slate-700 text-white font-semibold py-20 text-center">
+    <div class="space-y-6">
         <h4 class="text-lg">POTRAŽITE POMOĆ U ODABIRU IDALNE KLIME ZA VAS!</h4>
         <h2 class="text-2xl">Veliki izbor klima uređaja pristupačnih cijena usluga montaže dajemo u cijeloj Hrvatskoj</h2>
         <h3 class="text-lg text-gray-400">Pozovite nas ili ostavite poruku kroz našu kontakt formu</h3>
@@ -31,9 +31,9 @@
 <section class="container px-4 py-12 mx-auto bg-gray-200">
     <livewire:best-buy-products />
 </section>
-<section class="container px-4 mx-auto py-10">
-    <h3 class="mb-4 text-2xl font-semibold text-gray-700">VODIČ ZA KLIMA UREĐAJE</h3>
-    @include('partials._vodic-za-klima-uredaje')
+<hr class="container mt-20 mx-auto">
+<section class="container px-4 mx-auto py-10 space-y-10">
+    @include('partials._montaza-klima-uredaja')
 </section>
 <hr class="container my-4 mx-auto">
 <section class="container px-4 mx-auto py-10">
