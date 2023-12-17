@@ -52,12 +52,12 @@ function elementsFixedOnScroll() {
        document.getElementById("logo-section").classList.remove("container");
        document.getElementById("logo-section").classList.add("fixed");
        document.getElementById("logo-section").classList.add("top-0");
-       document.getElementById("logo-section").classList.add("w-screen");
+       document.getElementById("logo-section").classList.add("w-full");
     } else {
        document.getElementById("logo-section").classList.add("container");
        document.getElementById("logo-section").classList.remove("fixed");
        document.getElementById("logo-section").classList.remove("top-0");
-       document.getElementById("logo-section").classList.remove("w-screen");
+       document.getElementById("logo-section").classList.remove("w-full");
     }
 }
 
